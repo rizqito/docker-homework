@@ -1,8 +1,8 @@
-FROM node:13.12.0-alpine
+FROM node:alpine
 WORKDIR /app-fe
-COPY . .
-RUN npm install
+COPY package.json .
 RUN npm install react-script@latest
+RUN npm install
 COPY . .
 EXPOSE 3000
 CMD ["npm","start"]
